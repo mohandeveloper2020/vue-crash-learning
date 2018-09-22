@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">COMPONENT NESTING</h1>
+
+	<div id="app" class="container">
+
+		<posts></posts>
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+	Vue.component('posts', {
+		
+		template: `
+			<div>
+				<ul>
+					<product v-for="product in products" :key="product.id">{{ product.title }}</product>
+				</ul>
+			</div>
+		`,
+
+		data(){
+			return {
+				products : [
+					{
+						id: 1,
+						title: 'Electronics'
+					},
+					{
+						id: 2,
+						title: 'Home Appliances'
+					},
+					{
+						id: 3,
+						title: 'Mens wear'
+					},
+					{
+						id: 4,
+						title: 'Womens wear'
+					},
+					{
+						id: 5,
+						title: 'Kids wear'
+					},
+
+				]
+			}
+		}
+	});
+
+
+	Vue.component('product', {
+		template: `<li><slot></slot></li>` // slot is important to get the data
+	});
+
+
+	
+	let vm = new Vue({
+		el : '#app',
+
+		data : {
+			
+		}
+		
+	})
+	
+
+</script>
+</body>
+</html>

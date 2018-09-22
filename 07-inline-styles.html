@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">INLINE STYLING</h1>
+
+
+	<div id="app" class="container">
+
+
+		<!-- v-bind for inline styling -->
+		<span :style="{color: 'red', fontSize: '20px'}">{{ message }}</span> 
+
+		
+		<!-- picking fontSize from data and adding px -->
+		<span :style="{color: 'green', fontSize: fontSize + 'px'}">{{ message }}</span> 
+
+		
+		<!-- picking fontSize with px from data -->
+		<span :style="{color: 'blue', fontSize: fontSizePx}">{{ message }}</span>
+		
+		
+		<!-- created styleObject in data and calling it inline -->
+		<span :style="styleObject">{{ message }}</span>
+
+
+		<!-- multiple styleObjects - same styles overrides with last array object and adds the extra stylings -->
+		<span :style="[styleObject, styleObject2, styleObject3]">{{ message }}</span>
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	let vm = new Vue({
+		el: '#app',
+		data : {
+			message: 'Hello',
+			fontSize: 40,
+			fontSizePx: '60px',
+			
+			styleObject: {
+				color: 'yellow',
+				fontSize: '80px'
+			},
+
+			styleObject2: {
+				color: 'cyan',
+				fontSize: '100px',
+				fontStyle: 'Italic'
+			},
+
+			styleObject3: {
+				fontWeight: 'bold'
+			}
+		}
+	})
+
+	
+
+</script>
+</body>
+</html>

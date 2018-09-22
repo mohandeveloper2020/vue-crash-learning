@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">LIST RENDERING</h1>
+
+
+	<div id="app" class="container">
+
+		
+		<ul>
+			<li v-for="post in posts" :key="post.id">
+				<h3>{{post.title}}</h3>
+				<h5>{{post.description}}</h5>
+				<hr>
+			</li>
+		</ul>
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	new Vue({
+		el: '#app',
+		data : {
+			posts: [
+				{
+					id: 1,
+					title: 'Post 1',
+					description: 'adgadgdaogdnaogngaogndg.'
+				},
+				{
+					id: 2,
+					title: 'Post 2',
+					description: 'adgadgdaogdnaogngaogndg'
+				},
+				{
+					id: 3,
+					title: 'Post 3',
+					description: 'adgadgdaogdnaogngaogndg'
+				},
+				{
+					id: 4,
+					title: 'Post 4',
+					description: 'adgadgdaogdnaogngaogndg'
+				},
+				{
+					id: 5,
+					title: 'Post 5',
+					description: 'adgadgdaogdnaogngaogndg'
+				}
+			]
+		}
+	})
+	
+
+</script>
+</body>
+</html>

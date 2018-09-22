@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">COMPONENT METHODS</h1>
+
+
+	<div id="app" class="container">
+
+		<posts inline-template>
+			<button @click="welcome">click me</button>
+			<!-- component with methods -->
+		</posts>
+		
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+	Vue.component('posts', {
+		template: `<h1>Hellloooooo</h1>`,
+
+		data(){
+			return {
+
+			}
+		},
+
+		methods: {
+			welcome(){
+				alert('Welcome, you clicked me!');
+			}
+		}
+	})
+	
+	let vm = new Vue({
+		el : '#app',
+
+		data : {
+			
+		}
+		
+	})
+	
+
+</script>
+</body>
+</html>

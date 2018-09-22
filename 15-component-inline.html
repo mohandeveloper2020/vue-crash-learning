@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">COMPONENT INLINE</h1>
+
+
+	<div id="app" class="container">
+
+		<posts>dadggadgada</posts>
+		<!-- anything inside written will not be displayed, but will display only from component inside script !!! -->
+
+		
+		<posts inline-template>
+			<h5>gaongaodgaogdngoafn</h5>
+			<!-- anything written inside with inline-template will be displayed, but will not display anything from component inside script -->
+		</posts>
+		
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+	Vue.component('posts', {
+		template: `<h1>Hellloooooo</h1>`
+	})
+	
+	let vm = new Vue({
+		el : '#app',
+
+		data : {
+			
+		}
+		
+	})
+	
+
+</script>
+</body>
+</html>

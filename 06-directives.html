@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<style type="text/css">
+		h1 {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">DIRECTIVES</h1>
+
+
+	<div id="app" class="container">
+
+		<a :href="url">{{url}}</a> <!-- v-bind directive -->
+
+		<h1 v-on:click="number++">{{ number }}</h1> <!-- v-on directive with click -->
+
+
+		<button @click="number++">Increase</button>
+		<button @click="number--">Decrease</button>
+
+
+			
+		<form action="#" @submit.prevent="number++"> <!-- to prevent default and not to refresh the browser -->
+			<button type="submit">SUBMIT</button>
+		</form>
+
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	let vm = new Vue({
+		el: '#app',
+		data : {
+			url: 'http://www.google.com',
+			number: 10
+		}
+	})
+
+	
+
+</script>
+</body>
+</html>

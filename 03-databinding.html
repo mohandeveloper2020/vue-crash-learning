@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">DATA BINDING</h1>
+
+	<div id="app" class="container">
+
+		<a v-bind:href="url"> {{ url }}</a> <!-- v-bind -->
+
+		<a :href="url">{{ url }}</a> <!-- shorthand for v-bind -->
+
+		<div data="dynamicId">{{ dynamicId }}</div>
+
+		<div :data="dynamicId">{{ dynamicId }}</div> <!-- can bind data attribute -->
+
+
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	let vm = new Vue({
+		el: '#app',
+		data : {
+			url: 'http://www.google.com',
+			dynamicId: 30
+		}
+	})
+
+	
+
+</script>
+</body>
+</html>

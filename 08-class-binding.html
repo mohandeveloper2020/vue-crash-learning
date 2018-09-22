@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<style type="text/css">
+		.active {color:green;}
+		.notActive {color:red;}
+	</style>
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">CLASS BINDING</h1>
+
+
+	<div id="app" class="container">
+
+		<!-- default active class applied -->
+		<h1 class="active">{{ message }}</h1>
+
+
+		<!-- active class is applied if isActive data is true / or if false active class will not be applied -->
+		<h1 class="static" :class="{active: isActive}">{{ message }}</h1>
+
+
+		<!-- if isActive data is true - active class will be applied -->
+		<!-- if isActive data is false - notActive class will be applied -->
+		<h1 class="static" :class="[isActive ? 'active' : 'notActive']">{{ message }}</h1>
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	let vm = new Vue({
+		el: '#app',
+		data : {
+			message: 'Hello',
+			isActive: true // check changing to true/false
+		}
+	})
+
+	
+
+</script>
+</body>
+</html>

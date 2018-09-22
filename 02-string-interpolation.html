@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">STRING INTERPOLATION</h1>
+
+	<div id="app" class="container">
+
+		<h1> {{ message }} </h1>
+
+		<h2> {{ number }} </h2>
+
+		<h3> {{ number + 5 }} </h3>
+
+		<h4> {{ isActive ? 'Yes I am active' : 'No I am not active'}} </h4>
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	let vm = new Vue({
+		el: '#app',
+		data : {
+			message : 'Hello',
+			number: 10,
+			isActive : true
+		}
+	})
+
+	// In browser console check playing with vm
+	// vm.message = 'Mohan'
+	// vm.number = 20
+	// vm.isActive = false
+
+</script>
+</body>
+</html>

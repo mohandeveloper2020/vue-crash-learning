@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue crash course</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<style type="text/css">
+		.active {color:green;}
+		.notActive {color:red;}
+	</style>
+</head>
+<body>
+
+	<h1 class="bg-dark text-white text-center">EVENT BINDING</h1>
+	
+
+	<div id="app" class="container">
+
+
+		<div>
+			<button @click="increaseSize">Increase Size</button>
+			<button @click="decreaseSize">Decrease Size</button>
+		</div>
+		
+		<span :style="{fontSize: fontSize + 'px'}">{{ message }}</span>
+		<!-- better to use px in inline styling for mathematic operations -->
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	let vm = new Vue({
+		el: '#app',
+		data : {
+			message: 'Hello',
+			fontSize: 12, // fontSize : '12px' doesn't support as it needs mathematic operations (add, subtract....)	
+		},
+
+		methods: {
+			increaseSize() {
+				this.fontSize++; // this refers to object withing vm variable
+			},
+			decreaseSize(){
+				this.fontSize--;
+			}
+		}
+	})
+
+	
+
+</script>
+</body>
+</html>
